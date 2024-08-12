@@ -11,7 +11,7 @@
     <header class = "header">
         <img src="резьба.jpg" class="head_img">
         <h1 class="head_text">Резьба</h1>
-        <h1 class="head_text" id="countdown"></h1>
+        <h1 class="text" id="countdown"></h1>
     </header>
     <script>
         // Определение даты отсчета
@@ -40,9 +40,16 @@
             }
         }, 1000);
     </script>
-    
-    <main>
+    <main style="width: 100vw; height: 80vh;">
         <script src="script.js"></script>
     </main>
+
+    <main style="width: 100vw; height: 80vh;">
+        <input type="file" accept="video/*"/>
+        <video class = "video", controls>
+            <source src="0801(1).mp4" type="video/mp4">
+        </video>
+    </main>
+
 </body>
 </html>

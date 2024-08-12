@@ -12,7 +12,7 @@ let isMouseDown = false;
 let timerId = null;
 
 function next(i, len = text[0].length) {
-    if (!isMouseDown) {
+    if (window.innerWidth>=420)
         document.querySelector('main').innerHTML = 
             `<div class="text">
                 <h2>${text[0][i % len]}</h2>
@@ -20,8 +20,15 @@ function next(i, len = text[0].length) {
             </div>
             <img src="image${i % len}.jpg" alt="Слайд ${i % len}" class="image">`;
 
-        timerId = setTimeout(() => next(i + 1, len), 3000);
-    }
+    else
+        document.querySelector('main').innerHTML = 
+            `<img src="image${i % len}.jpg" alt="Слайд ${i % len}" class="image">
+            <div class="text">
+                <h2>${text[0][i % len]}</h2>
+                <p>${text[1][i % len]}</p>
+            </div>`;
+
+    timerId = setTimeout(() => next(i + 1, len), 3000);
 }
 
 function handleMouseDown(event) {
